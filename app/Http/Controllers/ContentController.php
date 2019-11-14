@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MenuNav as MenuNav;
-use DateTime;
 use App\ContactMe;
-use routes\web;
+use Illuminate\Support\Facades\Mail;
 
 class ContentController extends Controller
 {
@@ -39,22 +38,33 @@ class ContentController extends Controller
 
         //print_r($request->input());
 
-        //insert fields to the database using the model
+        //insert fields to the database using ContacMe model
         ContactMe::create($request->all());
+
+        //Getting data from ContactMe form fields
+        $nameUser = $request->input('name');
+        $emailUser = $request->input('email');
+        $message = $request->input('message');
+        $phoneUser = $request->input('phone');
+        
+        //I send two differents emails: one to the user and other one to the admin
+        self::sendEmail($nameUser, $emailUser, $phoneUser, $message, 'emailContactUser');
+        self::sendEmail($nameUser, $emailUser, $phoneUser, $message, 'emailContactAdmin');
+        
         return redirect('thanks');
-        /*
-        Mail::send(
-            'email',
-            array(
-                'name' => $request->get('name'),
-                'email' => $request->get('email'),
-                'phone' => $request->get('phone'),
-                'user_message' => $request->get('message')
-            ),
-            function ($message) {
-                $message->from('saquib.gt@gmail.com');
-                $message->to('saquib.s.mik@hotmail.com', 'Admin')->subject('From PORTFOLIO');
-            }
-        );*/
     }
+
+    function sendEmail($to_name, $to_email, $to_phone, $body, $emailBladeTemplate)
+    {
+        if($emailBladeTemplate == 'emailContactAdmin'){
+            $to_email = 'silviamyembi@gmail.com'; //Admin email address 
+        }
+        $details = array("name_email" => $to_name, "email_address" => $to_email, "phone" => $to_phone, "body_email" => $body);
+        Mail::send($emailBladeTemplate, $details, function ($message) use ($to_name, $to_email) {
+            //option when I want different sender
+            //$message->from('silviamyembi@gmail.com')->subject('SYA Portfolio Contact');
+            $message->to($to_email)->subject('SYA Portfolio Contact');
+        });
+    }
+
 }

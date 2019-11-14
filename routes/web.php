@@ -19,22 +19,24 @@ Route::get('/', function () {
     return view('welcome', $itemNav);
 });
 
+/****send email using route /send-mail** */ 
+/*
 Route::get('/send-mail', function () {
-   
-    $details = [
-        'title' => 'Mail from Contact Silvia Yembi.com',
-        'body' => 'This is for testing email using smtp'
-    ];
-   
-    \Mail::to('s.mik@hotmail.com')->send(new \App\Mail\MailSendContact($details));
-   
+   $to_name = "Silvia Yembi";
+   $to_email =  "s.mik@hotmail.com";
+    $details = array("name_email" => $to_name, "body_email"=>"This is the body of the email");
+    //emailContact: is the blae template
+    Mail::send('emailContact', $details, function($message) use ($to_name, $to_email){ 
+        $message->to($to_email)->subject('Message from My Portfolio');
+    });
     dd("Email is Sent.");
-});
+});*/
 
 Route::post('contact-me','ContentController@contactMePost');
 
 Route::get('/items', 'ContentController@showMenuNavItems');
 
+/**View to show after send a contact form, is called from ContentController*/
 Route::get('/thanks', function () {
     $itemNav['items_nav_bar'] = $GLOBALS['items_array'];
     return view('thankPage', $itemNav);

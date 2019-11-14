@@ -395,7 +395,8 @@
                     </div>
                     <div class="col-md-6" style="margin-top: 40px;">
                         <h1>Thank you..</h1>
-                        <h3>You will receive my feedback as soon as possible</h3>
+                        <h3>You have a copy of your message in your email.<br>
+                        You will receive my feedback as soon as possible</h3>
                         <a class="navbar-brand" href="{{ url('/') }}">
                             <img src="images/logo_white.png" title="Go back" height="50px" class="rounded">
                         </a>
