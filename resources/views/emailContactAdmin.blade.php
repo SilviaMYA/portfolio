@@ -6,9 +6,6 @@ Hi <strong> Silvia Yembi </strong>
 Name User: <strong> {{ $name_email }} </strong>
 </p>
 <p>
-Email: <strong>{{ $email_address }}</strong>
-</p>
-<p>
 Phone User: <strong>{{ $phone }}</strong>
 </p>
 

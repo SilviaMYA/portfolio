@@ -10,6 +10,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
+    <!-- Animated -->
+    <link rel="stylesheet" href="{{ URL::asset('css/animated.css') }}">
+    <script type="text/javascript" src="{{ URL::asset('js/wow.min.js') }}"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
+
+    
 
     <title>Silvia Yembi</title>
 
@@ -34,13 +40,13 @@
             margin-bottom: 150px;
         }
 
-        .navbar {
+        .header {
             overflow: hidden;
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 1;
-            padding: 10px;
+            padding: 0px;
             box-shadow: 5px 10px 18px #888888;
         }
 
@@ -61,6 +67,18 @@
         .nav-item a:hover {
             background-color: #279888;
             color: white;
+        }
+
+        .progress_container {
+            width: 100%;
+            height: 8px;
+        }
+
+        .progress_bar_scroll {
+            height: 8px;
+            background: #279888;
+            width: 0%;
+            border-radius: 5px;
         }
 
         .full-height {
@@ -364,43 +382,32 @@
 </head>
 
 <body>
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo_white.png" height="50px" class="rounded">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="images/logo_white.png" height="50px" class="rounded">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-
-            <ul class="navbar-nav mr-auto ml-auto">
-                <!-- <li class="nav-item active">
-                    <a class="nav-link" href="#mh-home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mh-about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mh-skills">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mh-experience">Experiences</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mh-portfolio">Portfolio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#mh-contact">Contact</a>
-                </li> -->
-                @foreach ($items_nav_bar as $item)
-                <li class="nav-item @if ($loop->index === 0) active @endif">
-                    <a href="#{{ $item }}">{{ $item }}</a>
-                </li>
-                @endforeach
-            </ul>
+                <ul class="navbar-nav mr-auto ml-auto">
+                    @foreach ($items_nav_bar as $item)
+                    <li class="nav-item @if ($loop->index === 0) active @endif">
+                        <a href="#{{ $item }}">{{ $item }}</a>
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+        </nav>
+        <div class="col-sm-12 progress_container">
+            <div class="progress_bar_scroll" id="myBar"></div>
         </div>
-    </nav>
+    </div>
+
+
+
     <div class="container">
         <!--
         ===================
@@ -425,7 +432,7 @@
 
                 <div class="row">
                     <div class="col-md-6" style="margin-top: 40px;">
-                        <div class=" text-center">
+                        <div class=" text-center wow bounceInLeft">
                             <h1 class="font-weight-bold">Silvia Yembi</h1>
                         </div>
                         <div class="text-center font-weight-bold">
@@ -447,7 +454,7 @@
                     </div>
                     <div class="col-md-6">
                         <div class="div_mine shadow-lg">
-                            <img src="images/silvia.jpg" height="290px" class="rounded-circle  animated bounce infinite" alt="Silvia">
+                            <img src="images/silvia.jpg" height="290px" class="rounded-circle  animated bounce" alt="Silvia">
                         </div>
                     </div>
 
@@ -460,7 +467,7 @@
             PORTFOLIO
         =================
         -->
-        <section class="my_portfolio" id="Portfolio">
+        <section class="my_portfolio  wow bounceInLeft" id="Portfolio">
             <h3 class="title_3 text-center mb-5">Portfolio</h3>
             <div class="row">
                 <div class="col-md-4" id="weather">
@@ -477,7 +484,7 @@
                         </div>
                     </a>
                     <div class="row ml-0 mr-0" style="margin-top: 18px">
-                        <div class="black_background vertical_div" style="color: green">Skills</div>
+                        <div class="black_background vertical_div" style="color: green">Technologies</div>
                         <div class="pl-0 pr-0" style=" width: 90%;">
                             <div class="progress">
                                 <div class="progress-bar bg-success" style="width:30%">Rest API</div>
@@ -495,7 +502,7 @@
                     </div>
                 </div>
                 <!--Docence-->
-                <div class="col-md-4" id="docence">
+                <div class="col-md-4  wow bounceInDown" id="docence">
                     <a href="https://docence22.000webhostapp.com/" target="_blank">
                         <div class="thumbnail">
                             <img src="images/docence.jpg" class="mx-auto" alt="img04" height="205px">
@@ -531,7 +538,7 @@
                     </div>
                 </div>
                 <!--Write Down Vocabularyary -->
-                <div class="col-md-4" id="vocabulary">
+                <div class="col-md-4  wow bounceInRight" id="vocabulary">
                     <a href="http://write-down-dictionary.herokuapp.com/" target="_blank">
                         <div class="thumbnail">
                             <img src="images/vocabulary.gif" class="mx-auto" alt="img04" height="205px">
@@ -566,7 +573,7 @@
 
 
                 <!--user interface-->
-                <div class="col-md-4 mt-5" id="user_interface">
+                <div class="col-md-4 mt-5 " id="user_interface">
                     <a href="https://new-geapp.herokuapp.com/" target="_blank">
                         <div class="thumbnail">
                             <img src="images/user_interface.png" class="mx-auto" alt="img04" height="160px">
@@ -599,18 +606,16 @@
         </section>
         <!--
         ===================
-           SKILLS
+           ABOUT
         ===================
         -->
-        <section id="Skills">
+        <section id="About">
             <h3 class="title_3 text-center mb-5">Professional Skills</h3>
 
             <div class="container">
                 <div class="row">
 
                     <div class="col-sm-6 col-md-3">
-                        <!-- <div class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.5s">
-                                        </div> -->
                         <div class="progress-circle" data-progress="80"></div>
                         <div class="skill_name">Communication</div>
                     </div>
@@ -633,11 +638,6 @@
             </div>
 
         </section>
-        <!--
-        ===================
-           EXPERIENCE
-        ===================
-        -->
 
         <!--
         ===================
@@ -649,7 +649,7 @@
             <div class="container">
                 <h3 class="title_3 text-center mb-5 mt-5">Contact me</h3>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 wow bounceInLeft">
                         <form action="contact-me" method="POST">
                             @csrf
                             <!--to prevent the App from the outside the website request  -->
@@ -680,7 +680,7 @@
 
                     </div>
                     <div class=" col-md-6 ">
-                        <div class="row">
+                        <div class="row  wow bounceInRight">
                             <div class="col-sm-4 mt-5  text-right">
                                 <a target="_blank" href="https://www.linkedin.com/in/silvia-yembi/" rel="nofollow noopener noreferrer">
                                     <img class="img_media" src="images/linkedin.png">
@@ -714,6 +714,8 @@
     </div>
 
     <script>
+        //animaed
+         new WOW().init();
         $(document).ready(function() {
             //portfolio/g1.jpgmove();
 
@@ -741,6 +743,23 @@
                     }
                 }
             }
+        }
+
+
+
+        /**
+         ***********SCROLL INDICATOR
+         ** When the user scrolls the page, we have a scroll indicator
+         */
+        window.onscroll = function() {
+            myFunctionScrollPage()
+        };
+
+        function myFunctionScrollPage() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
         }
     </script>
 

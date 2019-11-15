@@ -59,7 +59,7 @@ class ContentController extends Controller
         if($emailBladeTemplate == 'emailContactAdmin'){
             $to_email = 'silviamyembi@gmail.com'; //Admin email address 
         }
-        $details = array("name_email" => $to_name, "email_address" => $to_email, "phone" => $to_phone, "body_email" => $body);
+        $details = array("name_email" => $to_name, "phone" => $to_phone, "body_email" => $body);
         Mail::send($emailBladeTemplate, $details, function ($message) use ($to_name, $to_email) {
             //option when I want different sender
             //$message->from('silviamyembi@gmail.com')->subject('SYA Portfolio Contact');
