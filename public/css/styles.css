@@ -504,7 +504,7 @@ hr {
 
 
 /**Loading page */
-#loading_div {
+/*#loading_div {
     width: 100%;
     height: 100%;
     top: 0;
@@ -516,11 +516,20 @@ hr {
     text-align: center;
     background-color: #065032;
 
+}*/
+.container{
+    position: relative;
+}
+
+#loading_div{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
 
 #loading_image {
-    z-index: 100;
-    margin-top: 175px;
     width: 70px;
 }
 

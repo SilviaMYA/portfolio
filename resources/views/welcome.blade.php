@@ -79,7 +79,7 @@
             HOME 
         ===================
         -->
-        <section class="home_section" id="Home" data-wow-duration="2s" data-wow-delay="0.3s">
+        <section id="Home" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="flex-center position-ref full-height">
 
                 <div class="row">
@@ -119,7 +119,7 @@
             PORTFOLIO
         =================
         -->
-        <section class="my_portfolio  wow bounceInLeft" id="Portfolio">
+        <section class="wow bounceInLeft" id="Portfolio">
             <h3 class="title_3 text-center mb-5">Portfolio</h3>
             <hr class="pink_hr mt-n4">
             <div class="row">
@@ -362,10 +362,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
     <!-- Animated js file -->
-    <script type="text/javascript" src="{{ URL::asset('js/wow.min.js') }}"></script> 
+    <script type="text/javascript" src="{{ URL::asset('js/wow.min.js') }}"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> -->
 
-    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script> 
+    <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
 </body>
 
