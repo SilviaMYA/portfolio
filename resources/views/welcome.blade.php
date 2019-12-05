@@ -101,7 +101,7 @@
                         </div>
                         <div class=" text_home_contact">
                             <i class="fa fa-phone"></i>
-                            <a href="calto: +61468370503">+61 468 370 503</a>
+                            <a href="callto: +61468370503">+61 468 370 503</a>
                         </div>
                     </div>
                     <div class="col-6 float-sm-left">
@@ -122,6 +122,14 @@
         <section class="wow bounceInLeft" id="Portfolio">
             <h3 class="title_3 text-center mb-5">Portfolio</h3>
             <hr class="pink_hr mt-n4">
+            <div class="text-center mb-5">
+                <a id="git_portfolio" target="_blank" href="https://github.com/SilviaMYA" rel="nofollow noopener noreferrer">
+                    <span style="font-size: 100px; color: #279888">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <h3 id="text_git" style="display: none">Find all code of this portfolio on my git account</h3>
+                </a>
+            </div>
             <div class="row">
                 <div class="col-md-4" id="weather">
                     <a href="http://checkweather.rf.gd" target="_blank">
@@ -196,7 +204,7 @@
                         <div class="thumbnail">
                             <img src="images/vocabulary.gif" class="mx-auto" alt="img04" height="205px">
                             <div class="div_transaction">
-                                <span class="text_plus">Add new entries to the dictionary</span>
+                                <span class="text_plus">Add new entry to the dictionary</span>
                             </div>
                             <div class="black_background">
                                 <h3 class="mb-0">Write down vocabulary</h3>
@@ -237,7 +245,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="pt-0 pb-5  text-center">
                         <p>
-                            I am highly motivated and dedicated developer specialized in web programming and Android applications. I enjoy working as part of a team, facing new challenges and coming up with innovative solutions to make a project evolve and have more utility and functionality for a customer on a daily basis. I am continually seeking to learn and improve, which is why I am looking for new experiences and new challenges.
+                            I a am highly motivated and dedicated developer specialized in web programming and Android applications. I enjoy working as part of a team, facing new challenges and coming up with innovative solutions to make a project evolve and have more utility and functionality for a customer on a daily basis. I am continually seeking to learn and improve, which is why I am looking for new experiences and new challenges.
                         </p>
 
                     </div>
@@ -252,7 +260,7 @@
                         <img src="images/clear-code.png" alt="Clear code" class="ml-3 mt-3 align-self-center">
                         <div class="media-body">
                             <h4>Clear code</h4>
-                            <p>I practice write a clear code to be readable and undestandable for others and not only for computers.</p>
+                            <p>I practice writing clear code that is readable and understandable for others and not only for computers.</p>
                         </div>
                     </div>
                 </div>
@@ -325,24 +333,29 @@
                     </div>
                     <div class=" col-md-6 ">
                         <div class="row  wow bounceInRight">
-                            <div class="col-4 mt-5  text-md-right">
-                                <a target="_blank" href="https://www.linkedin.com/in/silvia-yembi/" rel="nofollow noopener noreferrer">
-                                    <img class="img_media" src="images/linkedin.png">
+                            <div class="col-3 mt-5  text-md-center">
+                                <a target="_blank" class=" icon_media" href="https://www.linkedin.com/in/silvia-yembi/" rel="nofollow noopener noreferrer">
+                                    <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
-                            <div class="col-4 mt-5 text-md-center">
-                                <a target="_blank" href="https://www.facebook.com/silvia.yembi" rel="nofollow noopener noreferrer">
-                                    <img class="img_media" src="images/facebook.png">
+                            <div class="col-3 mt-5 text-md-center">
+                                <a target="_blank" class=" icon_media" href="https://www.facebook.com/silvia.yembi" rel="nofollow noopener noreferrer">
+                                    <i class="fab fa-facebook"></i>
                                 </a>
                             </div>
-                            <div class="col-4 mt-5  text-md-left">
-                                <a href="mailto: s.mik@hotmail.com" rel="nofollow noopener noreferrer">
-                                    <img class="img_media img_at" src="images/at1.png" height="105px">
+                            <div class="col-3 mt-5 text-md-center">
+                                <a target="_blank" class=" icon_media" href="https://github.com/SilviaMYA" rel="nofollow noopener noreferrer">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
+                            <div class="col-3 mt-5 text-md-center">
+                                <a class=" icon_media" href="mailto: s.mik@hotmail.com" rel="nofollow noopener noreferrer">
+                                    <i class="fas fa-at"></i>
                                 </a>
                             </div>
                             <div class="col-sm-12 text-center mt-5">
                                 <i class="fa fa-phone"></i>
-                                <span class="phone"> +61 468 370 503</span>
+                                <b>+61 468 370 503<b>
                             </div>
                         </div>
                     </div> <!--  end div social media icons -->

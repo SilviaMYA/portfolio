@@ -54,3 +54,11 @@
             var scrolled = (winScroll / height) * 100;
             document.getElementById("myBar").style.width = scrolled + "%";
         }
+
+        /**
+         ***************************
+         ** Show text block when hover on git icon in portfolio section
+         */
+        $( "#git_portfolio" ).hover(function() {
+            $("#text_git").css("display", "block");
+          });
