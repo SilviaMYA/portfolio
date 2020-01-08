@@ -23,7 +23,8 @@
 
 <body>
 
-    <div class="header mh-xs-mobile-nav">
+    <!-- <div class="header mh-xs-mobile-nav"> -->
+    <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#" onclick="collapseMenu()">
                 <img src="images/logo_white.png" height="50px" class="rounded">
@@ -32,15 +33,14 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mr-auto ml-auto">
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav ">
                     @foreach ($items_nav_bar as $item)
                     <li class="nav-item @if ($loop->index === 0) active @endif">
-                        <a href="#{{ $item }}" class="nav-link" onclick="collapseMenu()" data-target=".navbar-collapse.show">{{ $item }}</a>
+                        <a data-page="{{ $item }}" href="#{{ $item }}" class="nav-link" onclick="collapseMenu()" data-target=".navbar-collapse.show">{{ $item }}</a>
                     </li>
                     @endforeach
                     <li>
-
                         <!-- button to change background color -->
                         <div class="dropdown ml-md-5">
                             <button class="dropbtn right">Change background</button>
@@ -54,6 +54,8 @@
 
                         </div>
                     </li>
+                    <div class="my_box_item"></div>
+
                 </ul>
             </div>
 
@@ -65,7 +67,8 @@
         <div class="col-sm-12 progress_container d-none d-md-block">
             <div class="progress_bar_scroll" id="myBar"></div>
         </div>
-    </div>
+    </header>
+    <!-- </div> -->
 
 
 
@@ -79,7 +82,7 @@
             HOME 
         ===================
         -->
-        <section id="Home" data-wow-duration="2s" data-wow-delay="0.3s">
+        <section id="Home" class="Home" data-index="0" data-wow-duration="2s" data-wow-delay="0.3s">
             <div class="flex-center position-ref full-height">
 
                 <div class="row">
@@ -119,118 +122,119 @@
             PORTFOLIO
         =================
         -->
-        <section class="wow bounceInLeft" id="Portfolio">
+        <section class="Portfolio" data-index="1" id="Portfolio">
             <h3 class="title_3 text-center mb-5">Portfolio</h3>
             <hr class="pink_hr mt-n4">
-            <div class="text-center mb-5">
-                <a id="git_portfolio" target="_blank" href="https://github.com/SilviaMYA" rel="nofollow noopener noreferrer">
-                    <span style="font-size: 100px; color: #279888">
-                        <i class="fab fa-github"></i>
-                    </span>
-                    <h3 id="text_git" style="display: none">Find all code of this portfolio on my git account</h3>
-                </a>
-            </div>
-            <div class="row">
-                <div class="col-md-4" id="weather">
-                    <a href="http://checkweather.rf.gd" target="_blank">
-                        <div class="thumbnail">
-                            <img src="images/weather.png" class="mx-auto" alt="img04" height="205px">
-                            <div class="div_transaction">
-                                <span class="text_plus">Enter a city name to check the weather</span>
+            <div class="wow bounceInLeft">
+                <div class="text-center mb-5">
+                    <a id="git_portfolio" target="_blank" href="https://github.com/SilviaMYA" rel="nofollow noopener noreferrer">
+                        <span style="font-size: 100px; color: #279888">
+                            <i class="fab fa-github"></i>
+                        </span>
+                        <h3 id="text_git" style="display: none">Find all code of this portfolio on my git account</h3>
+                    </a>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" id="weather">
+                        <a href="http://checkweather.rf.gd" target="_blank">
+                            <div class="thumbnail">
+                                <img src="images/weather.png" class="mx-auto" alt="img04" height="205px">
+                                <div class="div_transaction">
+                                    <span class="text_plus">Enter a city name to check the weather</span>
+                                </div>
+                                <div class="black_background">
+                                    <h3 class="mb-0">Check the weather</h3>
+                                    <p>API weather</p>
+                                </div>
                             </div>
-                            <div class="black_background">
-                                <h3 class="mb-0">Check the weather</h3>
-                                <p>API weather</p>
+                        </a>
+                        <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
+                            <div class="black_background vertical_div" style="color: green">Skills</div>
+                            <div class="pl-0 pr-0" style=" width: 90%;">
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width:70%">Rest API</div>
+                                    <div class="text-right pr-2" style="width:30%;">70%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width:60%">Jquery </div>
+                                    <div class="text-right pr-2" style="width:40%;">60%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" style="width:80%">HTML, CSS & Bootstrap</div>
+                                    <div class="text-right pr-2" style="width:20%;">80%</div>
+                                </div>
                             </div>
                         </div>
-                    </a>
-                    <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
-                        <div class="black_background vertical_div" style="color: green">Skills</div>
-                        <div class="pl-0 pr-0" style=" width: 90%;">
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width:70%">Rest API</div>
-                                <div class="text-right pr-2" style="width:30%;">70%</div>
+                    </div>
+                    <!--Docence-->
+                    <div class="col-md-4 wow bounceInDown" id="docence">
+                        <a href="https://docence22.000webhostapp.com/" target="_blank">
+                            <div class="thumbnail">
+                                <img src="images/docence.jpg" class="mx-auto" alt="img04" height="205px">
+                                <div class="div_transaction">
+                                    <span class="text_plus">Professors and students interract to post and solve homework</span>
+                                </div>
+                                <div class="black_background">
+                                    <h3 class="mb-0">Homework system online</h3>
+                                    <p>Docencia</p>
+                                </div>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width:60%">Jquery </div>
-                                <div class="text-right pr-2" style="width:40%;">60%</div>
+                        </a>
+                        <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
+                            <div class="black_background vertical_div" style="color: #279888">Skills</div>
+                            <div class="pl-0 pr-0" style=" width: 90%;">
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width:70%">PHP</div>
+                                    <div class="text-right pr-2" style="width:30%;">70%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width:50%">MySQL </div>
+                                    <div class="text-right" style="width:50%; padding-right: 10px;">50%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width:70%">HTML, CSS & Bootstrap</div>
+                                    <div class="text-right pr-2" style="width:30%;">70%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-info" style="width:20%">JQuery</div>
+                                    <div class="text-right pr-2" style="width:80%;">20%</div>
+                                </div>
                             </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-success" style="width:80%">HTML, CSS & Bootstrap</div>
-                                <div class="text-right pr-2" style="width:20%;">80%</div>
+                        </div>
+                    </div>
+                    <!--Write Down Vocabularyary -->
+                    <div class="col-md-4  wow bounceInRight" id="vocabulary">
+                        <a href="http://write-down-dictionary.herokuapp.com" target="_blank">
+                            <div class="thumbnail">
+                                <img src="images/vocabulary.gif" class="mx-auto" alt="img04" height="205px">
+                                <div class="div_transaction">
+                                    <span class="text_plus">Add new entry to the dictionary</span>
+                                </div>
+                                <div class="black_background">
+                                    <h3 class="mb-0">Write down vocabulary</h3>
+                                    <p>Vocabulary</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
+                            <div class="black_background vertical_div" style="color: #065032">Skills</div>
+                            <div class="pl-0 pr-0" style=" width: 90%;">
+                                <div class="progress">
+                                    <div class="progress-bar bg-important" style="width:50%">HTML</div>
+                                    <div class="text-right pr-2" style="width:50%;">50%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-important" style="width:70%">Jquery </div>
+                                    <div class="text-right pr-2" style="width:30%;">70%</div>
+                                </div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-important" style="width:50%">CSS & Bootstrap</div>
+                                    <div class="text-right pr-2" style="width:50%;">50%</div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--Docence-->
-                <div class="col-md-4 wow bounceInDown" id="docence">
-                    <a href="https://docence22.000webhostapp.com/" target="_blank">
-                        <div class="thumbnail">
-                            <img src="images/docence.jpg" class="mx-auto" alt="img04" height="205px">
-                            <div class="div_transaction">
-                                <span class="text_plus">Professors and students interract to post and solve homework</span>
-                            </div>
-                            <div class="black_background">
-                                <h3 class="mb-0">Homework system online</h3>
-                                <p>Docencia</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
-                        <div class="black_background vertical_div" style="color: #279888">Skills</div>
-                        <div class="pl-0 pr-0" style=" width: 90%;">
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width:70%">PHP</div>
-                                <div class="text-right pr-2" style="width:30%;">70%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width:50%">MySQL </div>
-                                <div class="text-right" style="width:50%; padding-right: 10px;">50%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width:70%">HTML, CSS & Bootstrap</div>
-                                <div class="text-right pr-2" style="width:30%;">70%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-info" style="width:20%">JQuery</div>
-                                <div class="text-right pr-2" style="width:80%;">20%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Write Down Vocabularyary -->
-                <div class="col-md-4  wow bounceInRight" id="vocabulary">
-                    <a href="http://write-down-dictionary.herokuapp.com" target="_blank">
-                        <div class="thumbnail">
-                            <img src="images/vocabulary.gif" class="mx-auto" alt="img04" height="205px">
-                            <div class="div_transaction">
-                                <span class="text_plus">Add new entry to the dictionary</span>
-                            </div>
-                            <div class="black_background">
-                                <h3 class="mb-0">Write down vocabulary</h3>
-                                <p>Vocabulary</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="row ml-0 mr-0" style="margin-top: 18px; margin-bottom:60px;">
-                        <div class="black_background vertical_div" style="color: #065032">Skills</div>
-                        <div class="pl-0 pr-0" style=" width: 90%;">
-                            <div class="progress">
-                                <div class="progress-bar bg-important" style="width:50%">HTML</div>
-                                <div class="text-right pr-2" style="width:50%;">50%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-important" style="width:70%">Jquery </div>
-                                <div class="text-right pr-2" style="width:30%;">70%</div>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar bg-important" style="width:50%">CSS & Bootstrap</div>
-                                <div class="text-right pr-2" style="width:50%;">50%</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
         <!--
@@ -238,7 +242,7 @@
            ABOUT
         ===================
         -->
-        <section id="About">
+        <section id="About" class="About" data-index="2">
             <h3 class="title_3 text-center mb-5">About</h3>
             <hr class="pink_hr mt-n4">
             <div class="container">
@@ -296,7 +300,7 @@
            CONTACT
         ===================
         -->
-        <section id="Contact" style="margin-top: 180px;">
+        <section id="Contact" class="Contact" data-index="3" style="margin-top: 180px;">
             <div class="container">
                 <h3 class="title_3 text-center mb-5">Contact me</h3>
                 <hr class="pink_hr mt-n4">
@@ -332,23 +336,23 @@
 
                     </div>
                     <div class=" col-md-6 ">
-                        <div class="row  wow bounceInRight">
-                            <div class="col-3 mt-5  text-md-center">
+                        <div class="row  wow bounceInRight justify-content-center">
+                            <div class="col-3 mt-5  ">
                                 <a target="_blank" class=" icon_media" href="https://www.linkedin.com/in/silvia-yembi/" rel="nofollow noopener noreferrer">
                                     <i class="fab fa-linkedin"></i>
                                 </a>
                             </div>
-                            <div class="col-3 mt-5 text-md-center">
+                            <div class="col-3 mt-5">
                                 <a target="_blank" class=" icon_media" href="https://www.facebook.com/silvia.yembi" rel="nofollow noopener noreferrer">
                                     <i class="fab fa-facebook"></i>
                                 </a>
                             </div>
-                            <div class="col-3 mt-5 text-md-center">
+                            <div class="col-3 mt-5">
                                 <a target="_blank" class=" icon_media" href="https://github.com/SilviaMYA" rel="nofollow noopener noreferrer">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
-                            <div class="col-3 mt-5 text-md-center">
+                            <div class="col-3 mt-5">
                                 <a class=" icon_media" href="mailto: s.mik@hotmail.com" rel="nofollow noopener noreferrer">
                                     <i class="fas fa-at"></i>
                                 </a>

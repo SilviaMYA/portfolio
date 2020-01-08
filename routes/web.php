@@ -1,7 +1,7 @@
 <?php
 
 global $items_array;
-$items_array = ['Home', 'Portfolio', 'Contact', 'About'];
+$items_array = ['Home', 'Portfolio', 'About', 'Contact'];
 /*
 |--------------------------------------------------------------------------
 | Web Routes
