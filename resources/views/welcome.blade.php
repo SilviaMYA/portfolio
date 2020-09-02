@@ -168,7 +168,7 @@
                     </div>
                     <!--Docence-->
                     <div class="col-md-4 wow bounceInDown" id="docence">
-                        <a href="https://docence22.000webhostapp.com/" target="_blank">
+                        <a href="https://docencia22.000webhostapp.com/" target="_blank">
                             <div class="thumbnail">
                                 <img src="images/docence.jpg" class="mx-auto" alt="img04" height="205px">
                                 <div class="div_transaction">
