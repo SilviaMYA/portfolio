@@ -3,9 +3,9 @@
 <p align="center">A Ful Stack application developed in Laravel and PHP with <b> contact_me </b> functionality</p>
 <br/>
 <h3>To run this project locally.</h3><br/>
-<b> -  clone repository<br/>
-<b> - composer install to install dependencies<br/>
-<b> - cp .env.example .env copy env file<br/>
-<b> - php artisan key:generate to genrate key <br/>
-    <b> - run project </b> ```php artisan serve run project```
+<b> - Clone repository </b><br/>
+<b> - Install dependencies  </b>composer install <br/>
+<b> - Copy .env.example to .env file </b> cp .env.example .env <br/>
+<b> - Genrate key <b/> php artisan key:generate <br/>
+<b> - Run project </b> php artisan serve
 
