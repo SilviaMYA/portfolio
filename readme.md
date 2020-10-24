@@ -4,8 +4,8 @@
 <br/>
 <h3>To run this project locally.</h3><br/>
 <b> - Clone repository </b><br/>
-<b> - Install dependencies  </b>composer install <br/>
+<b> - Install dependencies  </b> composer install <br/>
 <b> - Copy .env.example to .env file </b> cp .env.example .env <br/>
-<b> - Genrate key <b/> php artisan key:generate <br/>
+<b> - Genrate key </b> php artisan key:generate <br/>
 <b> - Run project </b> php artisan serve
 
